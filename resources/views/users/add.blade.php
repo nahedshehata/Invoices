@@ -3,7 +3,7 @@
     <!-- Internal Nice-select css  -->
     <link href="{{URL::asset('assets/plugins/jquery-nice-select/css/nice-select.css')}}" rel="stylesheet" />
     @section('title')
-        اضافة مستخدم - مورا سوفت للادارة القانونية
+        اضافة مستخدم
     @stop
 
 
@@ -49,7 +49,7 @@
                         </div>
                     </div><br>
                     <form class="parsley-style-1" id="selectForm2" autocomplete="off" name="selectForm2"
-                          action="{{route('users.store','test')}}" method="post">
+                          action="{{route('users.store')}}" method="post">
                         {{csrf_field()}}
 
                         <div class="">
@@ -98,7 +98,8 @@
                             <div class="col-xs-12 col-md-12">
                                 <div class="form-group">
                                     <label class="form-label"> صلاحية المستخدم</label>
-                                    {!! Form::select('roles_name[]', $roles,[], array('class' => 'form-control','multiple')) !!}
+                                    {!! Form::select('admin', ['1' => 'owner', '0' => 'employee'], null, ['class' => 'form-control']) !!}
+
                                 </div>
                             </div>
                         </div>

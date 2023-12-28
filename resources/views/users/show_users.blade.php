@@ -41,9 +41,11 @@
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-header pb-0">
+                    @can('owner')
                     <div class="col-sm-1 col-md-2">
                         <a class="btn btn-primary btn-sm" href="{{ route('users.create') }}">اضافة مستخدم</a>
                     </div>
+                    @endcan
                 </div>
                 <div class="card-body">
                     <div class="table-responsive hoverable-table">
@@ -113,9 +115,12 @@
                         <button aria-label="Close" class="close"
                                 data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
                     </div>
-                    <form action="{{ route('users.destroy', 'test') }}" method="post">
-                        {{ method_field('delete') }}
-                        {{ csrf_field() }}
+                    @foreach ($user as $users)
+                    <form action="{{ route('users.destroy',$users->id) }}" method="post">
+                     @csrf
+                        @method('delete')
+                        @endforeach
+
                         <div class="modal-body">
                             <p>هل انت متاكد من عملية الحذف ؟</p><br>
                             <input type="hidden" name="user_id" id="user_id" value="">

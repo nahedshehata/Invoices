@@ -46,12 +46,6 @@
                     <span class="side-menu__label"> الفواتير </span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ route('invoices.index') }}">قائمه الفواتير </a></li>
-                    <li><a class="slide-item" href="{{ url('/' . $page='chart-morris') }}">الفواتير الدفوعه </a></li>
-                    <li><a class="slide-item" href="{{ url('/' . $page='chart-chartjs') }}">الفواتير الغير مدفوعه</a>
-                    </li>
-                    <li><a class="slide-item" href="{{ url('/' . $page='chart-chartjs') }}">الفواتير المدفوعه جزئيا</a>
-                    </li>
-
                 </ul>
             </li>
 
@@ -83,7 +77,6 @@
                     <span class="side-menu__label">المستخدمين</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ url('/' . $page='users') }}">قائمه المستخدمين</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . $page='') }}">صلاحيات المستخدمين</a></li>
                 </ul>
             </li>
             <li class="side-item side-item-category">الأعدادات</li>
@@ -121,3 +114,4 @@
     </div>
 </aside>
 <!-- main-sidebar -->
+
