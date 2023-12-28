@@ -15,10 +15,11 @@ class UserController extends Controller
      */
     public function index()
     {
-
-        $user=User::all();
-        return view('users.show_users',compact('user'));
-
+        if (Gate::allows('owner')) {
+            $user=User::all();
+            return view('users.show_users',compact('user'));
+        } else
+            abort(403, 'Unauthorized');
     }
 
     public function create()

@@ -64,7 +64,7 @@
                     <li><a class="slide-item" href="{{ route('customersReport') }}">تقرير العملاء</a></li>
                 </ul>
             </li>
-
+            @can('owner')
             <li class="side-item side-item-category">المستخدمين</li>
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}">
@@ -79,6 +79,7 @@
                     <li><a class="slide-item" href="{{ url('/' . $page='users') }}">قائمه المستخدمين</a></li>
                 </ul>
             </li>
+            @endcan
             <li class="side-item side-item-category">الأعدادات</li>
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page='#') }}">
